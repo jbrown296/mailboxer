@@ -1,4 +1,7 @@
 module Mailboxer
+  # Ensure Rails autoloads Mailboxer correctly in Rails 6+
+  ActiveSupport::Dependencies.autoload_paths << File.expand_path("../app/models/mailboxer", __dir__)
+
   module Models
     autoload :Messageable, 'mailboxer/models/messageable'
   end
